@@ -52,13 +52,7 @@ header img {
   margin: 0 4mm;
 }
 
-@page {
-  size: A3 portrait;
-  /* papel A3 retrato */
-  margin: 15mm 0mm;
-  /* top/bottom 15mm, left/right 0mm */
-  prince-scale: 0.8;
-}
+ 
 
 .number {
   margin: 0;
@@ -307,46 +301,59 @@ ul {
   font-size: 15px;
 }
 
+li a{
+  color: black;
+  font-size: 11px;
+}
 
 
 
- 
 
 /* Primeira página */
 @page :first {
-    margin: 0mm 4mm 15mm 4mm;
+  size: A3 portrait;
+  margin: 0mm 4mm 15mm 4mm;
 
-    @top-left { content: ""; }
-    @top-center { content: ""; }
-    @top-right { content: ""; }
+  @top-left {
+    content: "";
+  }
+
+  @top-center {
+    content: "";
+  }
+
+  @top-right {
+    content: "";
+  }
 }
 
 /* Páginas restantes */
 @page {
-    margin: 15mm 4mm;
+  size: A3 portrait;
+  margin: 15mm 4mm;
 
-    /* Cabeçalho */
-    @top-left {
-        content: counter(page) " – São Paulo, 70 (edição)";
-        font-family: "Segoe UI", sans-serif;
-        font-size: 10pt;
-    }
+  /* Cabeçalho */
+  @top-left {
+    content: counter(page) " – São Paulo, 70 (edição)";
+    font-family: "Segoe UI", sans-serif;
+    font-size: 10pt;
+  }
 
-    @top-center {
-        content: "Diário Oficial de São Paulo";
-        font-family: "Segoe UI", sans-serif;
-        font-size: 12pt;
-    }
+  @top-center {
+    content: "Diário Oficial de São Paulo";
+    font-family: "Segoe UI", sans-serif;
+    font-size: 12pt;
+  }
 
-    @top-right {
-        content: "segunda-feira, 20 de outubro de 2025";
-        font-family: "Segoe UI", sans-serif;
-        font-size: 10pt;
-    }
+  @top-right {
+    content: "segunda-feira, 20 de outubro de 2025";
+    font-family: "Segoe UI", sans-serif;
+    font-size: 10pt;
+  }
 }
 
 /* Sumário pontilhado */
 .containerSumario .listaPaginas a::after {
-    content: leader('.') target-counter(attr(href), page);
-    color: #333;
+  content: leader('.') target-counter(attr(href), page);
+  color: #333;
 }

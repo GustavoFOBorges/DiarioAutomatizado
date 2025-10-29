@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "jsdom": "^27.0.1",
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^24.26.1"
+  }
+}
